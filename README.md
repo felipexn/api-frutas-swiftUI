@@ -11,3 +11,13 @@ Telas
 
 
 schema no node-red caso precise mandar/ler mais de um dado ao mesmo tempo 
+Captura de Tela 2024-02-09 às 11.04.57
+
+codigo
+let novaMsg = msg;
+
+if(Array.isArray(msg.payload)){
+    novaMsg = [msg.payload.map(user => ({ payload: user}))];
+}
+return novaMsg;
+
